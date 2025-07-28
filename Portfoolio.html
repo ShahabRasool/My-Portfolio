@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="./output.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Typewriter Effect -->
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    
+     <style type="text/css">
+        .text-gradient {
+            background: linear-gradient(to right, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            background: linear-gradient(to right, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 2.25rem;
+            }
+        }
+        .skill-icon {
+            width: 4rem;
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9999px;
+            background-color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            margin-bottom: 0.5rem;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(37,99,235,0.1) 0%, rgba(124,58,237,0.1) 100%);
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes bounce-slow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes hamburgerToCross {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(90deg); }
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        .animate-bounce-slow {
+            animation: bounce-slow 2s infinite;
+        }
+        .hamburger-cross {
+            animation: hamburgerToCross 0.3s forwards;
+        }
+        .group:hover .ring-effect::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    width: calc(100% + 24px);
+    height: calc(100% + 24px);
+    border-radius: 9999px;
+    border: 3px solid rgba(124, 58, 237, 0.6); /* purple */
+    animation: pulse-ring 1.2s ease-out infinite;
+  }
+
+  @keyframes pulse-ring {
+    0% {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+    70% {
+      transform: scale(1.4);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1.4);
+      opacity: 0;
+    }
+  }
+    </style>
+</head>
+<body>
+    <div class="container max-w-[1920px] w-full mx-auto">
+        <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32 mx-auto  py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gradient hover:text-secondary transition">Shahab<span class="text-dark">.</span></a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="text-dark hover:text-primary transition">Home</a>
+                <a href="#about" class="text-dark hover:text-primary transition">About</a>
+                <a href="#skills" class="text-dark hover:text-primary transition">Skills</a>
+                <a href="#experience" class="text-dark hover:text-primary transition">Experience</a>
+                <a href="#education" class="text-dark hover:text-primary transition">Education</a>
+                <a href="#projects" class="text-dark hover:text-primary transition">Projects</a>
+                <a href="#contact" class="text-dark hover:text-primary transition">Contact</a>
+            </div>
+            <button class="md:hidden text-dark" id="mobileMenuButton">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white py-4 px-4 shadow-lg" id="mobileMenu">
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="text-dark hover:text-primary transition">Home</a>
+                <a href="#about" class="text-dark hover:text-primary transition">About</a>
+                <a href="#skills" class="text-dark hover:text-primary transition">Skills</a>
+                <a href="#experience" class="text-dark hover:text-primary transition">Experience</a>
+                <a href="#education" class="text-dark hover:text-primary transition">Education</a>
+                <a href="#projects" class="text-dark hover:text-primary transition">Projects</a>
+                <a href="#contact" class="text-dark hover:text-primary transition">Contact</a>
+            </div>
+        </div>
+      </nav>
+
+      <section id="home" class="py-20 hero-gradient relative overflow-hidden">
+    <!-- Background Blobs -->
+    <div class="absolute top-0 left-0 w-full h-full opacity-10">
+      <div class="absolute top-20 left-10 w-32 h-32 rounded-full bg-blue-600 blur-xl"></div>
+      <div class="absolute bottom-10 right-10 w-40 h-40 rounded-full bg-purple-600 blur-xl"></div>
+      <div class="absolute top-1/2 right-1/4 w-24 h-24 rounded-full bg-purple-500 blur-xl"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32 flex flex-col lg:flex-row justify-between items-center relative z-10">
+      <!-- Left: Text -->
+      <div class="mb-10 md:mb-0 lg:max-w-xl xl:max-w-2xl" data-aos="fade-right">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">
+          Hi, I'm <span class="text-gradient hover:text-secondary transition">Shahab Rasool</span>
+        </h1>
+        <h2 class="text-2xl md:text-3xl text-gray-600 mb-6" id="typewriter">Frontend Web Developer</h2>
+        <p class="text-gray-600 mb-8 max-w-lg">
+          Specializing in responsive web design with expertise in HTML, CSS, JavaScript, and Drupal theme development.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <a href="#contact" class="bg-gradient-to-r from-[#2563eb] to-[#7c3aed] text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+            Contact Me
+          </a>
+          <a href="#" class="border border-blue-600 text-blue-600 px-6 py-3 rounded-full hover:bg-blue-600 hover:text-white transition transform hover:-translate-y-1">
+            Download CV
+          </a>
+        </div>
+        <div class="flex mt-6 space-x-4">
+          <a href="https://github.com/ShahabRasool" target="_blank" class="text-dark hover:text-blue-600 text-2xl transform hover:-translate-y-1 transition"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/shahab-rasool" target="_blank" class="text-dark hover:text-blue-600 text-2xl transform hover:-translate-y-1 transition"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="text-dark hover:text-blue-600 text-2xl transform hover:-translate-y-1 transition"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+      <!-- Right: Image -->
+      <div class="md:w-auto flex justify-center" data-aos="fade-left">
+        <div class="group relative">
+<div class="group relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl hover:shadow-[0_0_25px_rgba(124,58,237,0.6)] transition-all duration-500">
+    <img src="./images/1736962878386.jpg" alt="Shahab Rasool" class="w-full h-full object-cover" />
+    <div class="absolute inset-0 "></div>
+  </div>
+
+
+
+          <!-- Floating icons -->
+          <div class="absolute -bottom-5 -right-5 bg-white p-4 rounded-full shadow-lg animate-bounce-slow">
+            <div class="w-16 h-16 rounded-full bg-gradient-to-r from-[#2563eb] to-[#7c3aed] flex items-center justify-center">
+              <i class="fas fa-code text-white text-2xl"></i>
+            </div>
+          </div>
+
+          <div class="absolute -top-5 -left-5 w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center shadow-lg animate-float">
+            <i class="fas fa-star text-white"></i>
+          </div>
+
+          <div class="absolute top-20 -right-10 w-10 h-10 rounded-full bg-green-400 flex items-center justify-center shadow-lg animate-float" style="animation-delay: 0.5s;">
+            <i class="fas fa-check text-white"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    </div>
+     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
