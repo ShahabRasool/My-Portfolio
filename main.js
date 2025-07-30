@@ -16,10 +16,10 @@
             .typeString('Frontend Developer')
             .pauseFor(2000)
             .deleteAll()
-            .typeString('Drupal Specialist')
+            .typeString('Web developer')
             .pauseFor(2000)
             .deleteAll()
-            .typeString('UI/UX Enthusiast')
+            .typeString('Drupal Developer')
             .pauseFor(2000)
             .start();
 
