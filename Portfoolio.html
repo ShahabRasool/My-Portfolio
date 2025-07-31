@@ -3,613 +3,589 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="./output.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Swiper JS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
-    <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- Typewriter Effect -->
-    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-    
-     <style type="text/css">
-        .text-gradient {
-            background: linear-gradient(to right, #2563eb, #7c3aed);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            background: linear-gradient(to right, #2563eb, #7c3aed);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        @media (min-width: 768px) {
-            .section-title {
-                font-size: 2.25rem;
-            }
-        }
-        .skill-icon {
-            width: 4rem;
-            height: 4rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 9999px;
-            background-color: white;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            margin-bottom: 0.5rem;
-        }
-        .hero-gradient {
-            background: linear-gradient(135deg, rgba(37,99,235,0.1) 0%, rgba(124,58,237,0.1) 100%);
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        @keyframes bounce-slow {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        @keyframes hamburgerToCross {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(90deg); }
-        }
-        .animate-float {
-            animation: float 3s ease-in-out infinite;
-        }
-        .animate-bounce-slow {
-            animation: bounce-slow 2s infinite;
-        }
-        .hamburger-cross {
-            animation: hamburgerToCross 0.3s forwards;
-        }
-        .group:hover .ring-effect::before {
-    content: "";
-    position: absolute;
-    top: -12px;
-    left: -12px;
-    width: calc(100% + 24px);
-    height: calc(100% + 24px);
-    border-radius: 9999px;
-    border: 3px solid rgba(124, 58, 237, 0.6); /* purple */
-    animation: pulse-ring 1.2s ease-out infinite;
-  }
-
-  @keyframes pulse-ring {
-    0% {
-      transform: scale(1);
-      opacity: 0.8;
-    }
-    70% {
-      transform: scale(1.4);
-      opacity: 0;
-    }
-    100% {
-      transform: scale(1.4);
-      opacity: 0;
-    }
-  }
+    <title>Shahab Rasool - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <style>
+        .hero-gradient { background: linear-gradient(135deg, #f3f4f6, #e5e7eb); }
+        .text-gradient { background: linear-gradient(to right, #2563eb, #7c3aed); -webkit-background-clip: text; color: transparent; }
+        .section-title { @apply text-3xl md:text-4xl font-bold text-center mb-12 text-dark; }
+        .skill-icon { @apply w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center mb-2; }
+        .text-dark { @apply text-gray-900; }
+        .text-primary { @apply text-blue-600; }
+        .text-secondary { @apply text-purple-600; }
+        .bg-dark { @apply bg-gray-900; }
+        .animate-bounce-slow { animation: bounce 3s infinite; }
+        .animate-float { animation: float 4s ease-in-out infinite; }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+        .dropdown-content { display: none; }
+        .dropdown:hover .dropdown-content { display: block; }
+        .tailwind-icon { background-image: url('https://tailwindcss.com/img/tailwindcss-mark.79614a5f61617ba49a0891494521226b.svg'); background-size: contain; background-repeat: no-repeat; background-position: center; }
+        html { scroll-behavior: smooth; }
     </style>
 </head>
-<body>
-    <div class="container max-w-[1920px] w-full mx-auto">
-        <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32 mx-auto  py-3 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-gradient hover:text-secondary transition">Shahab<span class="text-dark">.</span></a>
-            <div class="hidden md:flex space-x-6">
-                <a href="#home" class="text-dark hover:text-primary transition">Home</a>
-                <a href="#about" class="text-dark hover:text-primary transition">About</a>
-                <a href="#skills" class="text-dark hover:text-primary transition">Skills</a>
-                <a href="#experience" class="text-dark hover:text-primary transition">Experience</a>
-                <a href="#education" class="text-dark hover:text-primary transition">Education</a>
-                <a href="#projects" class="text-dark hover:text-primary transition">Projects</a>
-                <a href="#contact" class="text-dark hover:text-primary transition">Contact</a>
-            </div>
-            <button class="md:hidden text-dark" id="mobileMenuButton">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
-        </div>
-        <!-- Mobile Menu -->
-        <div class="md:hidden hidden bg-white py-4 px-4 shadow-lg" id="mobileMenu">
-            <div class="flex flex-col space-y-4">
-                <a href="#home" class="text-dark hover:text-primary transition">Home</a>
-                <a href="#about" class="text-dark hover:text-primary transition">About</a>
-                <a href="#skills" class="text-dark hover:text-primary transition">Skills</a>
-                <a href="#experience" class="text-dark hover:text-primary transition">Experience</a>
-                <a href="#education" class="text-dark hover:text-primary transition">Education</a>
-                <a href="#projects" class="text-dark hover:text-primary transition">Projects</a>
-                <a href="#contact" class="text-dark hover:text-primary transition">Contact</a>
-            </div>
-        </div>
-      </nav>
-
-      <section id="home" class="py-20 hero-gradient relative overflow-hidden">
-    <!-- Background Blobs -->
-    <div class="absolute top-0 left-0 w-full h-full opacity-10">
-      <div class="absolute top-20 left-10 w-32 h-32 rounded-full bg-blue-600 blur-xl"></div>
-      <div class="absolute bottom-10 right-10 w-40 h-40 rounded-full bg-purple-600 blur-xl"></div>
-      <div class="absolute top-1/2 right-1/4 w-24 h-24 rounded-full bg-purple-500 blur-xl"></div>
-    </div>
-
-    <!-- Main Content -->
-    <div class="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32 flex flex-col lg:flex-row justify-between items-center relative z-10">
-      <!-- Left: Text -->
-      <div class="mb-10 md:mb-0 lg:max-w-xl xl:max-w-2xl" data-aos="fade-right">
-        <h1 class="text-4xl md:text-6xl font-bold mb-4">
-          Hi, I'm <span class="text-gradient hover:text-secondary transition">Shahab Rasool</span>
-        </h1>
-        <h2 class="text-2xl md:text-3xl text-gray-600 mb-6" id="typewriter">Frontend Web Developer</h2>
-        <p class="text-gray-600 mb-8 max-w-lg">
-          Specializing in responsive web design with expertise in HTML,TailwindCSS, CSS, JavaScript, and Drupal theme development.
-        </p>
-        <div class="flex flex-wrap gap-2">
-          <a href="#contact" class="bg-gradient-to-r from-[#2563eb] to-[#7c3aed] text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
-            Contact Me
-          </a>
-          <a href="#" class="border border-blue-600 text-blue-600 px-6 py-3 rounded-full hover:bg-blue-600 hover:text-white transition transform hover:-translate-y-1">
-            Download CV
-          </a>
-        </div>
-        <div class="flex mt-6 space-x-4">
-          <a href="https://github.com/ShahabRasool" target="_blank" class="text-dark hover:text-blue-600 text-2xl transform hover:-translate-y-1 transition"><i class="fab fa-github"></i></a>
-          <a href="https://linkedin.com/in/shahab-rasool" target="_blank" class="text-dark hover:text-blue-600 text-2xl transform hover:-translate-y-1 transition"><i class="fab fa-linkedin"></i></a>
-          <a href="#" class="text-dark hover:text-blue-600 text-2xl transform hover:-translate-y-1 transition"><i class="fab fa-twitter"></i></a>
-        </div>
-      </div>
-
-      <!-- Right: Image -->
-      <div class="md:w-auto flex justify-center" data-aos="fade-left">
-        <div class="group relative">
-<div class="group relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl hover:shadow-[0_0_25px_rgba(124,58,237,0.6)] transition-all duration-500">
-    <img src="./images/1736962878386.jpg" alt="Shahab Rasool" class="w-full h-full object-cover" />
-    <div class="absolute inset-0 "></div>
-  </div>
-
-
-
-          <!-- Floating icons -->
-          <div class="absolute -bottom-5 -right-5 bg-white p-4 rounded-full shadow-lg animate-bounce-slow">
-            <div class="w-16 h-16 rounded-full bg-gradient-to-r from-[#2563eb] to-[#7c3aed] flex items-center justify-center">
-              <i class="fas fa-code text-white text-2xl"></i>
-            </div>
-          </div>
-
-          <div class="absolute -top-5 -left-5 w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center shadow-lg animate-float">
-            <i class="fas fa-star text-white"></i>
-          </div>
-
-          <div class="absolute top-20 -right-10 w-10 h-10 rounded-full bg-green-400 flex items-center justify-center shadow-lg animate-float" style="animation-delay: 0.5s;">
-            <i class="fas fa-check text-white"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="section-title" data-aos="fade-up">About Me</h2>
-            <div class="flex flex-col md:flex-row items-center">
-                <div class=" " data-aos="fade-left">
-                    <p class="text-gray-600 mb-6">
-                        I'm a passionate Frontend Developer with expertise in creating responsive and user-friendly web applications. 
-                        My journey in web development started during my computer science studies and has evolved into a professional career.
-                    </p>
-                    <p class="text-gray-600 mb-6">
-                        I specialize in HTML, CSS, JavaScript, and modern frameworks like React. I also have experience with Drupal theme 
-                        development and creating custom components.
-                    </p>
-                    <div class="grid grid-cols-2 gap-4 mb-8">
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-primary mr-2"></i>
-                            <span class="text-gray-700 hover:text-primary transition">Responsive Design</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-primary mr-2"></i>
-                            <span class="text-gray-700 hover:text-primary transition">Drupal Theming</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-primary mr-2"></i>
-                            <span class="text-gray-700 hover:text-primary transition">UI/UX Focused</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-primary mr-2"></i>
-                            <span class="text-gray-700 hover:text-primary transition">Performance Optimization</span>
+<body class="font-sans">
+    <div class="container max-w-[1920px] mx-auto w-full overflow-x-hidden">
+        <!-- Navigation -->
+        <nav class="bg-white shadow-sm sticky top-0 z-50 px-5 md:px-10 xl:px-[80px] 2xl:px-[120px]">
+            <div class="mx-auto py-3 flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-gradient hover:text-secondary transition">Shahab<span class="text-dark">.</span></a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#home" class="text-dark hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md transition">Home</a>
+                    <a href="#about" class="text-dark hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md transition">About</a>
+                    <div class="relative dropdown">
+                        <a href="#skills" class="text-dark hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md transition">Skills & Experience</a>
+                        <div class="dropdown-content absolute bg-white shadow-lg rounded-md mt-2 z-10">
+                            <a href="#skills" class="block text-dark hover:bg-blue-600 hover:text-white px-4 py-2 transition">Skills</a>
+                            <a href="#experience" class="block text-dark hover:bg-blue-600 hover:text-white px-4 py-2 transition">Experience</a>
                         </div>
                     </div>
+                    <a href="#education" class="text-dark hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md transition">Education</a>
+                    <a href="#projects" class="text-dark hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md transition">Projects</a>
+                    <a href="#contact" class="text-dark hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md transition">Contact</a>
+                </div>
+                <button class="md:hidden text-dark" id="mobileMenuButton">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <div class="md:hidden hidden bg-white py-4 px-4 shadow-lg" id="mobileMenu">
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="text-dark hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md transition">Home</a>
+                    <a href="#about" class="text-dark hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md transition">About</a>
+                    <a href="#skills" class="text-dark hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md transition">Skills</a>
+                    <a href="#experience" class="text-dark hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md transition">Experience</a>
+                    <a href="#education" class="text-dark hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md transition">Education</a>
+                    <a href="#projects" class="text-dark hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md transition">Projects</a>
+                    <a href="#contact" class="text-dark hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md transition">Contact</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="home" class="py-20 hero-gradient relative overflow-hidden ">
+            <div class="absolute top-0 left-0 w-full h-full opacity-10">
+                <div class="absolute top-20 left-10 w-32 h-32 rounded-full bg-blue-600 blur-xl"></div>
+                <div class="absolute bottom-10 right-10 w-40 h-40 rounded-full bg-purple-600 blur-xl"></div>
+                <div class="absolute top-1/2 right-1/4 w-24 h-24 rounded-full bg-purple-500 blur-xl"></div>
+            </div>
+            <div class="flex flex-col lg:flex-row justify-between items-center relative z-10 px-5 md:px-10 xl:px-[80px] 2xl:px-[120px]">
+                <div class="mb-10 md:mb-0 lg:max-w-xl xl:max-w-2xl" data-aos="fade-right">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                        Hi, I'm <span class="text-gradient hover:text-secondary transition">Shahab Rasool</span>
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl text-gray-600 mb-6">Frontend Web Developer</h2>
+                    <p class="text-gray-600 mb-8 max-w-lg">
+                        Specializing in responsive web design with expertise in HTML, Tailwind CSS, JavaScript, PHP, and Drupal theme development.
+                    </p>
                     <div class="flex flex-wrap gap-2">
-                        <a href="#contact" class="bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
-                            Contact Me
-                        </a>
-                        <a href="#projects" class="border border-primary text-primary px-6 py-3 rounded-full hover:bg-primary hover:text-blackgit  transition transform hover:-translate-y-1">
-                            View Projects
-                        </a>
+                        <a href="#contact" class="bg-blue-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-purple-600 hover:shadow-xl transition transform hover:-translate-y-1">Contact Me</a>
+                        <a href="#" class="border border-blue-600 text-blue-600 px-6 py-3 rounded-full hover:bg-purple-600 hover:text-white transition transform hover:-translate-y-1">Download CV</a>
+                    </div>
+                    <div class="flex mt-6 space-x-4">
+                        <a href="https://github.com/ShahabRasool" target="_blank" class="text-dark hover:bg-blue-600 hover:text-white px-2 py-1 rounded-md text-2xl transition"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/shahab-rasool" target="_blank" class="text-dark hover:bg-blue-600 hover:text-white px-2 py-1 rounded-md text-2xl transition"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://facebook.com/" target="_blank" class="text-dark hover:bg-blue-600 hover:text-white px-2 py-1 rounded-md text-2xl transition"><i class="fab fa-facebook"></i></a>
+                        <a href="https://wa.me/923154545099" target="_blank" class="text-dark hover:bg-blue-600 hover:text-white px-2 py-1 rounded-md text-2xl transition"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://x.com/shahabrasool" target="_blank" class="text-dark hover:bg-blue-600 hover:text-white px-2 py-1 rounded-md text-2xl transition"><i class="fab fa-x-twitter"></i></a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-      <!-- Skills Section -->
-    <section id="skills" class="py-20">
-        <div class="container mx-auto px-4">
-            <h2 class="section-title" data-aos="fade-up">My Skills</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-                    <div class="skill-icon mx-auto">
-                        <i class="fab fa-html5 text-3xl text-orange-500"></i>
-                    </div>
-                    <h3 class="font-semibold text-dark hover:text-primary transition">HTML5</h3>
-                </div>
-                <div class="text-center" data-aos="fade-up" data-aos-delay="150">
-                    <div class="skill-icon mx-auto">
-                        <i class="fab fa-css3-alt text-3xl text-blue-500"></i>
-                    </div>
-                    <h3 class="font-semibold text-dark hover:text-primary transition">CSS3</h3>
-                </div>
-                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-                    <div class="skill-icon mx-auto">
-                        <i class="fab fa-js text-3xl text-yellow-500"></i>
-                    </div>
-                    <h3 class="font-semibold text-dark hover:text-primary transition">JavaScript</h3>
-                </div>
-                <div class="text-center" data-aos="fade-up" data-aos-delay="250">
-                    <div class="skill-icon mx-auto">
-                        <i class="fab fa-tailwind text-3xl text-blue-400"></i>
-                    </div>
-                    <h3 class="font-semibold text-dark hover:text-primary transition">Tailwind CSS</h3>
-                </div>
-                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
-                    <div class="skill-icon mx-auto">
-                        <i class="fab fa-drupal text-3xl text-blue-600"></i>
-                    </div>
-                    <h3 class="font-semibold text-dark hover:text-primary transition">Drupal</h3>
-                </div>
-                <div class="text-center" data-aos="fade-up" data-aos-delay="350">
-                    <div class="skill-icon mx-auto">
-                        <i class="fas fa-database text-3xl text-blue-700"></i>
-                    </div>
-                    <h3 class="font-semibold text-dark hover:text-primary transition">MySQL</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-      <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="section-title" data-aos="fade-up">Experience</h2>
-            <div class="max-w-3xl mx-auto">
-                <div class="relative">
-                    <div class="hidden md:block absolute h-full left-1/2 -ml-1">
-                        <div class="h-full w-1 bg-gradient-to-b from-primary to-secondary rounded-full"></div>
-                    </div>
-
-                    <div class="mb-16" data-aos="fade-up">
-                        <div class="flex flex-col md:flex-row items-center">
-                            <div class="md:w-1/2 md:pr-8 md:text-right order-1">
-                                <div class="inline-block bg-white p-6 rounded-lg shadow-lg border border-gray-100 hover:shadow-xl transition hover:border-primary">
-                                    <h3 class="text-xl font-bold text-dark hover:text-primary transition">Trainee Frontend Web Developer</h3>
-                                    <p class="text-primary font-semibold hover:text-secondary transition">Drupak Software Company</p>
-                                    <p class="text-gray-500 mb-4">Jan 2023 - Present</p>
-                                    <ul class="list-disc pl-5 text-gray-600 space-y-2 text-left">
-                                        <li class="hover:text-primary transition">Developed frontend components using Tailwind CSS, JavaScript, and PHP</li>
-                                        <li class="hover:text-primary transition">Built and styled reusable components using Twig</li>
-                                        <li class="hover:text-primary transition">Integrated animations using AOS and SwiperJS</li>
-                                        <li class="hover:text-primary transition">Worked on Drupal-based projects including theme integration</li>
-                                    </ul>
-                                </div>
+                <div class="md:w-auto flex justify-center" data-aos="fade-left">
+                    <div class="group relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl hover:shadow-[0_0_25px_rgba(124,58,237,0.6)] transition-all duration-500">
+                        <img src="./images/1736962878386.jpg" alt="Shahab Rasool" class="w-full h-full object-cover" />
+                        <div class="absolute inset-0"></div>
+                        <div class="absolute -bottom-5 -right-5 bg-white p-4 rounded-full shadow-lg animate-bounce-slow">
+                            <div class="w-16 h-16 rounded-full bg-gradient-to-r from-[#2563eb] to-[#7c3aed] flex items-center justify-center">
+                                <i class="fas fa-code text-white text-2xl"></i>
                             </div>
-                            <div class="hidden md:flex items-center justify-center w-10 h-10 mx-auto order-2">
-                                <div class="w-4 h-4 rounded-full bg-primary border-4 border-white shadow hover:bg-secondary transition"></div>
-                            </div>
-                            <div class="md:w-1/2 md:pl-8 order-3"></div>
                         </div>
-                    </div>
-
-                    <div class="mb-16" data-aos="fade-up" data-aos-delay="100">
-                        <div class="flex flex-col md:flex-row items-center">
-                            <div class="md:w-1/2 md:pr-8 md:text-right order-1">
-                                <div class="inline-block bg-white p-6 rounded-lg shadow-lg border border-gray-100 hover:shadow-xl transition hover:border-primary">
-                                    <h3 class="text-xl font-bold text-dark hover:text-primary transition">Freelance Developer</h3>
-                                    <p class="text-primary font-semibold hover:text-secondary transition">Self-Employed</p>
-                                    <p class="text-gray-500 mb-4">2021 – 2022</p>
-                                    <ul class="list-disc pl-5 text-gray-600 space-y-2 text-left">
-                                        <li class="hover:text-primary transition">Developed custom websites for small businesses</li>
-                                        <li class="hover:text-primary transition">Created responsive designs with mobile-first approach</li>
-                                        <li class="hover:text-primary transition">Implemented SEO best practices for client websites</li>
-                                        <li class="hover:text-primary transition">Provided maintenance and support services</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="hidden md:flex items-center justify-center w-10 h-10 mx-auto order-2">
-                                <div class="w-4 h-4 rounded-full bg-primary border-4 border-white shadow hover:bg-secondary transition"></div>
-                            </div>
-                            <div class="md:w-1/2 md:pl-8 order-3"></div>
+                        <div class="absolute -top-5 -left-5 w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center shadow-lg animate-float">
+                            <i class="fas fa-star text-white"></i>
+                        </div>
+                        <div class="absolute top-20 -right-10 w-10 h-10 rounded-full bg-green-400 flex items-center justify-center shadow-lg animate-float" style="animation-delay: 0.5s;">
+                            <i class="fas fa-check text-white"></i>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-white px-5 md:px-10 xl:px-[80px] 2xl:px-[120px]">
+            <div class="mx-auto">
+                <h2 class="section-title" data-aos="fade-up">About Me</h2>
+                <div class="flex flex-col md:flex-row items-center">
+                    <div data-aos="fade-left">
+                        <p class="text-gray-600 mb-6">
+                            I'm a dedicated Frontend Developer with a BS in Computer Science from Abdul Wali Khan University. My expertise lies in building responsive and dynamic websites using modern web technologies like HTML, Tailwind CSS, JavaScript, PHP, and Drupal.
+                        </p>
+                        <p class="text-gray-600 mb-6">
+                            With experience at Drupak Software Company and freelance projects, I focus on delivering pixel-perfect layouts and maintainable code. I'm passionate about learning the latest industry trends and contributing to innovative software solutions.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 mb-8">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-primary mr-2"></i>
+                                <span class="text-gray-700 hover:text-primary transition">Responsive Design</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-primary mr-2"></i>
+                                <span class="text-gray-700 hover:text-primary transition">Drupal Theming</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-primary mr-2"></i>
+                                <span class="text-gray-700 hover:text-primary transition">UI/UX Implementation</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-primary mr-2"></i>
+                                <span class="text-gray-700 hover:text-primary transition">Version Control (Git)</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="#contact" class="bg-blue-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-purple-600 hover:shadow-xl transition transform hover:-translate-y-1">Contact Me</a>
+                            <a href="#projects" class="border border-blue-600 text-blue-600 px-6 py-3 rounded-full hover:bg-purple-600 hover:text-white transition transform hover:-translate-y-1">View Projects</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 px-5 md:px-10 xl:px-[80px] 2xl:px-[120px]">
+            <div class="mx-auto">
+                <h2 class="section-title" data-aos="fade-up">My Skills</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="skill-icon mx-auto"><i class="fab fa-html5 text-3xl text-orange-500"></i></div>
+                        <h3 class="font-semibold text-dark hover:text-primary transition">HTML5</h3>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="150">
+                        <div class="skill-icon mx-auto"><i class="fab fa-css3-alt text-3xl text-blue-500"></i></div>
+                        <h3 class="font-semibold text-dark hover:text-primary transition">CSS3</h3>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="skill-icon mx-auto"><i class="fab fa-js text-3xl text-yellow-500"></i></div>
+                        <h3 class="font-semibold text-dark hover:text-primary transition">JavaScript</h3>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="250">
+                        <div class="skill-icon mx-auto tailwind-icon"></div>
+                        <h3 class="font-semibold text-dark hover:text-primary transition">Tailwind CSS</h3>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                        <div class="skill-icon mx-auto"><i class="fab fa-drupal text-3xl text-blue-600"></i></div>
+                        <h3 class="font-semibold text-dark hover:text-primary transition">Drupal</h3>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="350">
+                        <div class="skill-icon mx-auto"><i class="fab fa-php text-3xl text-purple-600"></i></div>
+                        <h3 class="font-semibold text-dark hover:text-primary transition">PHP</h3>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                        <div class="skill-icon mx-auto"><i class="fab fa-figma text-3xl text-pink-500"></i></div>
+                        <h3 class="font-semibold text-dark hover:text-primary transition">Figma</h3>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="450">
+                        <div class="skill-icon mx-auto"><i class="fab fa-github text-3xl text-black"></i></div>
+                        <h3 class="font-semibold text-dark hover:text-primary transition">GitHub</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 bg-white px-5 md:px-10 xl:px-[80px] 2xl:px-[120px]">
+            <div class="mx-auto">
+                <h2 class="section-title" data-aos="fade-up">Experience</h2>
+                <div class="max-w-3xl mx-auto space-y-6">
+                    <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-100 hover:shadow-xl transition hover:border-blue-600" data-aos="fade-up">
+                        <h3 class="text-xl font-bold text-dark hover:text-blue-600 transition">Trainee Web Developer</h3>
+                        <p class="text-blue-600 font-semibold hover:text-purple-600 transition">Drupak Software Company</p>
+                        <p class="text-gray-500 mb-4">Jan 2023 - Present</p>
+                        <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                            <li class="hover:text-blue-600 transition">Developed dynamic blog and task management systems using PHP, Tailwind CSS, and JavaScript</li>
+                            <li class="hover:text-blue-600 transition">Contributed to Drupal 10 corporate site (Artori) with responsive layouts and animations</li>
+                            <li class="hover:text-blue-600 transition">Integrated SwiperJS and AOS for seamless component animations</li>
+                            <li class="hover:text-blue-600 transition">Ensured pixel-perfect UI from Figma designs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Education Section -->
-    <section id="education" class="py-20">
-        <div class="container mx-auto px-4">
-            <h2 class="section-title" data-aos="fade-up">Education</h2>
-            <div class="max-w-3xl mx-auto">
-                <div class="relative">
-                    <div class="hidden md:block absolute h-full left-1/2 -ml-1">
-                        <div class="h-full w-1 bg-gradient-to-b from-primary to-secondary rounded-full"></div>
+        <section id="education" class="py-20 bg-gray-100 px-5 md:px-10 xl:px-[80px] 2xl:px-[120px]">
+            <div class="mx-auto">
+                <h2 class="section-title" data-aos="fade-up">Education</h2>
+                <div class="max-w-3xl mx-auto space-y-6">
+                    <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-100 hover:shadow-xl transition hover:border-blue-600" data-aos="fade-up">
+                        <h3 class="text-xl font-bold text-dark hover:text-blue-600 transition">BS Computer Science</h3>
+                        <p class="text-blue-600 font-semibold hover:text-purple-600 transition">Abdul Wali Khan University, Mardan</p>
+                        <p class="text-gray-500 mb-4">Sep 2019 – Sep 2023</p>
+                        <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                            <li class="hover:text-blue-600 transition">Focused on Software Engineering and Web Development</li>
+                            <li class="hover:text-blue-600 transition">Developed AI-based Face Recognition project using TensorFlow and OpenCV</li>
+                            <li class="hover:text-blue-600 transition">Studied Data Structures and Programming Fundamentals</li>
+                        </ul>
                     </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-100 hover:shadow-xl transition hover:border-blue-600" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-xl font-bold text-dark hover:text-blue-600 transition">Diploma in Information Technology</h3>
+                        <p class="text-blue-600 font-semibold hover:text-purple-600 transition">Government Management College, Mardan</p>
+                        <p class="text-gray-500 mb-4">Mar 2021 – Mar 2022</p>
+                        <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                            <li class="hover:text-blue-600 transition">Learned IT fundamentals, networking, and databases</li>
+                            <li class="hover:text-blue-600 transition">Completed practical assignments in software and hardware</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="mb-16" data-aos="fade-up">
-                        <div class="flex flex-col md:flex-row items-center">
-                            <div class="md:w-1/2 md:pr-8 order-1"></div>
-                            <div class="hidden md:flex items-center justify-center w-10 h-10 mx-auto order-2">
-                                <div class="w-4 h-4 rounded-full bg-primary border-4 border-white shadow hover:bg-secondary transition"></div>
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 px-5 md:px-10 xl:px-[80px] 2xl:px-[120px]">
+            <div class="mx-auto">
+                <h2 class="section-title" data-aos="fade-up">My Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition project-item" data-aos="fade-up" data-project-index="0">
+                        <div class="h-48 bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center">
+                            <i class="fas fa-laptop-code text-white text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-dark mb-2 hover:text-blue-600 transition">Artori</h3>
+                            <p class="text-gray-600 mb-4">Corporate website built with Drupal 10, featuring responsive layouts and animations.</p>
+                            <div class="flex flex-wrap gap-1 mb-4">
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">Drupal 10</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">Tailwind CSS</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">SwiperJS</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">AOS</span>
                             </div>
-                            <div class="md:w-1/2 md:pl-8 order-3">
-                                <div class="inline-block bg-white p-6 rounded-lg shadow-lg border border-gray-100 hover:shadow-xl transition hover:border-primary">
-                                    <h3 class="text-xl font-bold text-dark hover:text-primary transition">BS Computer Science</h3>
-                                    <p class="text-primary font-semibold hover:text-secondary transition">Abdul Wali Khan University</p>
-                                    <p class="text-gray-500 mb-4">Sep 2019 – Sep 2023</p>
-                                    <ul class="list-disc pl-5 text-gray-600 space-y-2">
-                                        <li class="hover:text-primary transition">Core courses in Web Engineering, Software Engineering</li>
-                                        <li class="hover:text-primary transition">Specialized in Programming Fundamentals, Data Structures</li>
-                                        <li class="hover:text-primary transition">Completed projects in AI and Software Construction</li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <button class="text-blue-600 hover:bg-purple-600 hover:text-white font-medium view-project-btn transition px-3 py-2 rounded-md">View Project →</button>
                         </div>
                     </div>
-
-                    <div class="mb-16" data-aos="fade-up" data-aos-delay="100">
-                        <div class="flex flex-col md:flex-row items-center">
-                            <div class="md:w-1/2 md:pr-8 order-1"></div>
-                            <div class="hidden md:flex items-center justify-center w-10 h-10 mx-auto order-2">
-                                <div class="w-4 h-4 rounded-full bg-primary border-4 border-white shadow hover:bg-secondary transition"></div>
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition project-item" data-aos="fade-up" data-aos-delay="100" data-project-index="1">
+                        <div class="h-48 bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
+                            <i class="fas fa-blog text-white text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-dark mb-2 hover:text-blue-600 transition">Blog System</h3>
+                            <p class="text-gray-600 mb-4">Dynamic blog platform with custom roles and article management.</p>
+                            <div class="flex flex-wrap gap-1 mb-4">
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">PHP</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">Tailwind CSS</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">JavaScript</span>
                             </div>
-                            <div class="md:w-1/2 md:pl-8 order-3">
-                                <div class="inline-block bg-white p-6 rounded-lg shadow-lg border border-gray-100 hover:shadow-xl transition hover:border-primary">
-                                    <h3 class="text-xl font-bold text-dark hover:text-primary transition">DIT – Diploma in Information Technology</h3>
-                                    <p class="text-primary font-semibold hover:text-secondary transition">KPK Technical Board</p>
-                                    <p class="text-gray-500 mb-4">Sep 2021 – Oct 2022</p>
-                                    <ul class="list-disc pl-5 text-gray-600 space-y-2">
-                                        <li class="hover:text-primary transition">Covered fundamentals of IT and computer operations</li>
-                                        <li class="hover:text-primary transition">Learned basics of networking, databases, and MS Office</li>
-                                        <li class="hover:text-primary transition">Completed practical assignments in hardware and software labs</li>
-                                    </ul>
-                                </div>
+                            <button class="text-blue-600 hover:bg-purple-600 hover:text-white font-medium view-project-btn transition px-3 py-2 rounded-md">View Project →</button>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition project-item" data-aos="fade-up" data-aos-delay="200" data-project-index="2">
+                        <div class="h-48 bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center">
+                            <i class="fas fa-tasks text-white text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-dark mb-2 hover:text-blue-600 transition">Task Management System</h3>
+                            <p class="text-gray-600 mb-4">Web-based task board with user assignments and project tagging.</p>
+                            <div class="flex flex-wrap gap-1 mb-4">
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">PHP</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">Tailwind CSS</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">JavaScript</span>
                             </div>
+                            <button class="text-blue-600 hover:bg-purple-600 hover:text-white font-medium view-project-btn transition px-3 py-2 rounded-md">View Project →</button>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition project-item" data-aos="fade-up" data-aos-delay="300" data-project-index="3">
+                        <div class="h-48 bg-gradient-to-r from-yellow-400 to-orange-500 flex items-center justify-center">
+                            <i class="fas fa-camera text-white text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-dark mb-2 hover:text-blue-600 transition">Face Recognition Security</h3>
+                            <p class="text-gray-600 mb-4">AI-based home security system using face recognition.</p>
+                            <div class="flex flex-wrap gap-1 mb-4">
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">TensorFlow</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">OpenCV</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">PyTorch</span>
+                            </div>
+                            <button class="text-blue-600 hover:bg-purple-600 hover:text-white font-medium view-project-btn transition px-3 py-2 rounded-md">View Project →</button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects Section with Modal -->
-    <section id="projects" class="py-20">
-        <div class="container mx-auto px-4">
-            <h2 class="section-title" data-aos="fade-up">My Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition project-item" data-aos="fade-up" data-project-index="0">
-                    <div class="h-48 bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+        <!-- Project Modal -->
+        <div class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 hidden" id="projectModal">
+            <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-bold text-dark" id="modalTitle">Project Title</h3>
+                        <button class="text-gray-500 hover:text-dark" id="closeModal"><i class="fas fa-times text-2xl"></i></button>
+                    </div>
+                    <div class="h-64 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg mb-6 flex items-center justify-center" id="modalImage">
                         <i class="fas fa-laptop-code text-white text-6xl"></i>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-dark mb-2 hover:text-primary transition">Artori.pk</h3>
-                        <p class="text-gray-600 mb-4">Corporate website built with Drupal 10, focusing on responsive layout and seamless animations.</p>
-                        <div class="flex flex-wrap gap-1 mb-4">
-                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">Drupal 10</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">Tailwind CSS</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">SwiperJS</span>
-                        </div>
-                        <button class="text-primary hover:text-secondary font-medium view-project-btn transition">View Project →</button>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition project-item" data-aos="fade-up" data-aos-delay="100" data-project-index="1">
-                    <div class="h-48 bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
-                        <i class="fas fa-shopping-cart text-white text-6xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-dark mb-2 hover:text-primary transition">E-Commerce Dashboard</h3>
-                        <p class="text-gray-600 mb-4">Admin dashboard for e-commerce platform with analytics and inventory management.</p>
-                        <div class="flex flex-wrap gap-1 mb-4">
-                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">React</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">Chart.js</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">Material UI</span>
-                        </div>
-                        <button class="text-primary hover:text-secondary font-medium view-project-btn transition">View Project →</button>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition project-item" data-aos="fade-up" data-aos-delay="200" data-project-index="2">
-                    <div class="h-48 bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center">
-                        <i class="fas fa-mobile-alt text-white text-6xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-dark mb-2 hover:text-primary transition">Mobile App UI</h3>
-                        <p class="text-gray-600 mb-4">Fitness tracking mobile application with custom UI components.</p>
-                        <div class="flex flex-wrap gap-1 mb-4">
-                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">Figma</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">UI/UX</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">Prototyping</span>
-                        </div>
-                        <button class="text-primary hover:text-secondary font-medium view-project-btn transition">View Project →</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Project Modal -->
-    <div class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 hidden" id="projectModal">
-        <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-            <div class="p-6">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-bold text-dark" id="modalTitle">Project Title</h3>
-                    <button class="text-gray-500 hover:text-dark" id="closeModal">
-                        <i class="fas fa-times text-2xl"></i>
-                    </button>
-                </div>
-                <div class="h-64 bg-gradient-to-r from-primary to-secondary rounded-lg mb-6 flex items-center justify-center" id="modalImage">
-                    <i class="fas fa-laptop-code text-white text-6xl"></i>
-                </div>
-                <div class="grid md:grid-cols-3 gap-6 mb-6">
-                    <div>
-                        <h4 class="font-semibold text-dark mb-2">Technologies</h4>
-                        <div class="flex flex-wrap gap-1" id="modalTech">
-                        </div>
-                    </div>
-                    <div>
-                        <h4 class="font-semibold text-dark mb-2">Date</h4>
-                        <p class="text-gray-600" id="modalDate">Jan 2023</p>
-                    </div>
-                    <div>
-                        <h4 class="font-semibold text-dark mb-2">Links</h4>
-                        <div class="flex space-x-2">
-                            <a href="#" class="text-primary hover:text-secondary transition" id="modalLiveLink">
-                                <i class="fas fa-globe"></i> Live Demo
-                            </a>
-                            <a href="#" class="text-primary hover:text-secondary transition" id="modalCodeLink">
-                                <i class="fab fa-github"></i> View Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-dark mb-2">Description</h4>
-                    <p class="text-gray-600 mb-4" id="modalDescription">
-                        Project description will appear here.
-                    </p>
-                    <h4 class="font-semibold text-dark mb-2">Key Features</h4>
-                    <ul class="list-disc pl-5 text-gray-600 space-y-2" id="modalFeatures">
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
-            <div class="flex flex-col md:flex-row gap-6">
-                <div class="md:w-1/2" data-aos="fade-right">
-                    <h3 class="text-xl font-bold text-dark mb-4 hover:text-primary transition">Contact Information</h3>
-                    <p class="text-gray-600 mb-6">Feel free to reach out to me for any questions or opportunities. I'll get back to you as soon as possible.</p>
-                    
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <div class="bg-primary/10 p-3 rounded-full mr-4">
-                                <i class="fas fa-envelope text-primary"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-dark hover:text-primary transition">Email</h4>
-                                <p class="text-gray-600 hover:text-primary transition">shahabrasool12@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="bg-primary/10 p-3 rounded-full mr-4">
-                                <i class="fas fa-phone-alt text-primary"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-dark hover:text-primary transition">Phone</h4>
-                                <p class="text-gray-600 hover:text-primary transition">+92 315 4545099</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="bg-primary/10 p-3 rounded-full mr-4">
-                                <i class="fas fa-map-marker-alt text-primary"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-dark hover:text-primary transition">Location</h4>
-                                <p class="text-gray-600 hover:text-primary transition">Wah Cantt, Punjab, Pakistan</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-6">
-                        <h4 class="font-semibold text-dark mb-4 hover:text-primary transition">Follow Me</h4>
-                        <div class="flex space-x-2">
-                            <a href="https://github.com/ShahabRasool" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-dark hover:bg-primary hover:text-white transition" target="_blank">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://linkedin.com/in/shahab-rasool" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-dark hover:bg-primary hover:text-white transition" target="_blank">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-dark hover:bg-primary hover:text-white transition">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-dark hover:bg-primary hover:text-white transition">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="md:w-1/2" data-aos="fade-left">
-                    <form class="space-y-4">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div>
-                                <label for="name" class="block text-gray-700 mb-2">Name</label>
-                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent hover:border-primary transition">
-                            </div>
-                            <div>
-                                <label for="email" class="block text-gray-700 mb-2">Email</label>
-                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent hover:border-primary transition">
-                            </div>
+                    <div class="grid md:grid-cols-3 gap-6 mb-6">
+                        <div>
+                            <h4 class="font-semibold text-dark mb-2">Technologies</h4>
+                            <div class="flex flex-wrap gap-1" id="modalTech"></div>
                         </div>
                         <div>
-                            <label for="subject" class="block text-gray-700 mb-2">Subject</label>
-                            <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent hover:border-primary transition">
+                            <h4 class="font-semibold text-dark mb-2">Date</h4>
+                            <p class="text-gray-600" id="modalDate">Jan 2023</p>
                         </div>
                         <div>
-                            <label for="message" class="block text-gray-700 mb-2">Message</label>
-                            <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent hover:border-primary transition"></textarea>
+                            <h4 class="font-semibold text-dark mb-2">Links</h4>
+                            <div class="flex space-x-2">
+                                <a href="#" class="text-blue-600 hover:bg-purple-600 hover:text-white px-2 py-1 rounded-md transition" id="modalLiveLink"><i class="fas fa-globe"></i> Live Demo</a>
+                                <a href="#" class="text-blue-600 hover:bg-purple-600 hover:text-white px-2 py-1 rounded-md transition" id="modalCodeLink"><i class="fab fa-github"></i> View Code</a>
+                            </div>
                         </div>
-                        <button type="submit" class="bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 w-full md:w-auto">
-                            Send Message
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-8">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <a href="#" class="text-2xl font-bold text-white hover:text-primary transition">Shahab<span class="text-primary">.</span></a>
-                    <p class="mt-2 text-gray-400">Frontend Developer & Drupal Specialist</p>
-                </div>
-                <div class="flex flex-col items-center md:items-end">
-                    <div class="flex space-x-2 mb-2">
-                        <a href="https://github.com/ShahabRasool" class="text-gray-400 hover:text-white transition" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://linkedin.com/in/shahab-rasool" class="text-gray-400 hover:text-white transition" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
                     </div>
-                    <p class="text-gray-400 text-sm">© 2025 Shahab Rasool. All rights reserved.</p>
+                    <div>
+                        <h4 class="font-semibold text-dark mb-2">Description</h4>
+                        <p class="text-gray-600 mb-4" id="modalDescription">Project description will appear here.</p>
+                        <h4 class="font-semibold text-dark mb-2">Key Features</h4>
+                        <ul class="list-disc pl-5 text-gray-600 space-y-2" id="modalFeatures"></ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </footer>
 
-    <!-- Back to Top Button -->
-    <a href="#home" class="fixed bottom-6 right-6 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-secondary transition-opacity opacity-0 invisible transform hover:scale-110" id="backToTop">
-        <i class="fas fa-arrow-up"></i>
-    </a>
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-white px-5 md:px-10 xl:px-[80px] 2xl:px-[120px]">
+            <div class="mx-auto">
+                <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+                <div class="flex flex-col md:flex-row gap-6">
+                    <div class="md:w-1/2" data-aos="fade-right">
+                        <h3 class="text-xl font-bold text-dark mb-4 hover:text-blue-600 transition">Contact Information</h3>
+                        <p class="text-gray-600 mb-6">Feel free to reach out for opportunities or questions. I'll respond promptly.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-blue-600/10 p-3 rounded-full mr-4"><i class="fas fa-envelope text-blue-600"></i></div>
+                                <div>
+                                    <h4 class="font-semibold text-dark hover:text-blue-600 transition">Email</h4>
+                                    <p class="text-gray-600 hover:text-blue-600 transition">shahabrasool12@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-blue-600/10 p-3 rounded-full mr-4"><i class="fas fa-phone-alt text-blue-600"></i></div>
+                                <div>
+                                    <h4 class="font-semibold text-dark hover:text-blue-600 transition">Phone</h4>
+                                    <p class="text-gray-600 hover:text-blue-600 transition">+92 315 4545099</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-blue-600/10 p-3 rounded-full mr-4"><i class="fas fa-map-marker-alt text-blue-600"></i></div>
+                                <div>
+                                    <h4 class="font-semibold text-dark hover:text-blue-600 transition">Location</h4>
+                                    <p class="text-gray-600 hover:text-blue-600 transition">Wah Cantt, Punjab, Pakistan</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <h4 class="font-semibold text-dark mb-4 hover:text-blue-600 transition">Follow Me</h4>
+                            <div class="flex space-x-2">
+                                <a href="https://github.com/ShahabRasool" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-dark hover:bg-blue-600 hover:text-white transition" target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="https://linkedin.com/in/shahab-rasool" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-dark hover:bg-blue-600 hover:text-white transition" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://facebook.com/shahab.rasool" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-dark hover:bg-blue-600 hover:text-white transition" target="_blank"><i class="fab fa-facebook"></i></a>
+                                <a href="https://wa.me/923154545099" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-dark hover:bg-blue-600 hover:text-white transition" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                                <a href="https://x.com/shahab_rasool" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-dark hover:bg-blue-600 hover:text-white transition" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2" data-aos="fade-left">
+                        <div class="space-y-4">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="name" class="block text-gray-700 mb-2">Name</label>
+                                    <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent hover:border-blue-600 transition" required>
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-gray-700 mb-2">Email</label>
+                                    <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent hover:border-blue-600 transition" required>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="subject" class="block text-gray-700 mb-2">Subject</label>
+                                <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent hover:border-blue-600 transition" required>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-gray-700 mb-2">Message</label>
+                                <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent hover:border-blue-600 transition" required></textarea>
+                            </div>
+                            <button type="button" onclick="submitForm()" class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-purple-600 hover:shadow-xl transition transform hover:-translate-y-1 w-full md:w-auto">Send Message</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-dark text-white py-8 px-5 md:px-10 xl:px-[80px] 2xl:px-[120px]">
+            <div class="mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-4 md:mb-0">
+                        <a href="#" class="text-2xl font-bold text-white hover:text-blue-600 transition">Shahab<span class="text-blue-600">.</span></a>
+                        <p class="mt-2 text-gray-400">Frontend Developer & Drupal Specialist</p>
+                    </div>
+                    <div class="flex flex-col items-center md:items-end">
+                        <div class="flex space-x-2 mb-2">
+                            <a href="https://github.com/ShahabRasool" class="text-gray-400 hover:bg-blue-600 hover:text-white px-2 py-1 rounded-md transition" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://linkedin.com/in/shahab-rasool" class="text-gray-400 hover:bg-blue-600 hover:text-white px-2 py-1 rounded-md transition" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://facebook.com/shahab.rasool" class="text-gray-400 hover:bg-blue-600 hover:text-white px-2 py-1 rounded-md transition" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://wa.me/923154545099" class="text-gray-400 hover:bg-blue-600 hover:text-white px-2 py-1 rounded-md transition" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://x.com/shahab_rasool" class="text-gray-400 hover:bg-blue-600 hover:text-white px-2 py-1 rounded-md transition" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                        </div>
+                        <p class="text-gray-400 text-sm">© 2025 Shahab Rasool. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Back to Top Button -->
+        <a href="#home" class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-purple-600 transition-opacity opacity-0 sm:opacity-100 sm:visible transform hover:scale-110" id="backToTop">
+            <i class="fas fa-arrow-up"></i>
+        </a>
     </div>
-     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="./main.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('opacity-0');
+                backToTop.classList.add('opacity-100', 'sm:visible');
+            } else {
+                backToTop.classList.remove('opacity-100', 'sm:visible');
+                backToTop.classList.add('opacity-0');
+            }
+        });
+
+        // Form Submission
+        function submitForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            if (name && email && subject && message) {
+                alert('Thank you for your message! I will get back to you soon. You can also contact me on GitHub, LinkedIn, Facebook, WhatsApp, or X.');
+                document.getElementById('name').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('subject').value = '';
+                document.getElementById('message').value = '';
+            } else {
+                alert('Please fill out all fields before submitting.');
+            }
+        }
+
+        // Project Modal Data
+        const projects = [
+            {
+                title: "Artori",
+                image: '<i class="fas fa-laptop-code text-white text-6xl"></i>',
+                technologies: ["Drupal 10", "Tailwind CSS", "SwiperJS", "AOS"],
+                date: "Jan 2023 - Present",
+                liveLink: "https://dev-artori.pantheonsite.io",
+                codeLink: "#",
+                description: "A corporate website built with Drupal 10, focusing on responsive layouts, design fidelity, and seamless component animations.",
+                features: [
+                    "Responsive design across all devices",
+                    "Integrated SwiperJS for carousel animations",
+                    "AOS for scroll-triggered animations",
+                    "Pixel-perfect UI from Figma designs"
+                ]
+            },
+            {
+                title: "Blog System",
+                image: '<i class="fas fa-blog text-white text-6xl"></i>',
+                technologies: ["PHP", "Tailwind CSS", "JavaScript"],
+                date: "2023",
+                liveLink: "#",
+                codeLink: "#",
+                description: "A dynamic blog platform with custom user roles, article management, and a responsive UI.",
+                features: [
+                    "Custom user role management",
+                    "Article creation and editing",
+                    "Responsive design",
+                    "View tracking features"
+                ]
+            },
+            {
+                title: "Task Management System",
+                image: '<i class="fas fa-tasks text-white text-6xl"></i>',
+                technologies: ["PHP", "Tailwind CSS", "JavaScript"],
+                date: "2023",
+                liveLink: "#",
+                codeLink: "#",
+                description: "A web-based task board with user assignments, project tagging, and role-based access.",
+                features: [
+                    "Task assignment and tracking",
+                    "Project tagging system",
+                    "Role-based access control",
+                    "Responsive UI"
+                ]
+            },
+            {
+                title: "Face Recognition Security",
+                image: '<i class="fas fa-camera text-white text-6xl"></i>',
+                technologies: ["TensorFlow", "OpenCV", "PyTorch"],
+                date: "2023",
+                liveLink: "#",
+                codeLink: "#",
+                description: "An AI-based home security system using face recognition for enhanced surveillance.",
+                features: [
+                    "Real-time face recognition",
+                    "AI-powered surveillance",
+                    "Integration with TensorFlow and OpenCV",
+                    "Predictive analytics"
+                ]
+            }
+        ];
+
+        // Project Modal Functionality
+        const projectModal = document.getElementById('projectModal');
+        const closeModal = document.getElementById('closeModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalImage = document.getElementById('modalImage');
+        const modalTech = document.getElementById('modalTech');
+        const modalDate = document.getElementById('modalDate');
+        const modalLiveLink = document.getElementById('modalLiveLink');
+        const modalCodeLink = document.getElementById('modalCodeLink');
+        const modalDescription = document.getElementById('modalDescription');
+        const modalFeatures = document.getElementById('modalFeatures');
+
+        document.querySelectorAll('.view-project-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const index = button.parentElement.parentElement.dataset.projectIndex;
+                const project = projects[index];
+                modalTitle.textContent = project.title;
+                modalImage.innerHTML = project.image;
+                modalTech.innerHTML = project.technologies.map(tech => `<span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">${tech}</span>`).join('');
+                modalDate.textContent = project.date;
+                modalLiveLink.href = project.liveLink;
+                modalCodeLink.href = project.codeLink;
+                modalDescription.textContent = project.description;
+                modalFeatures.innerHTML = project.features.map(feature => `<li>${feature}</li>`).join('');
+                projectModal.classList.remove('hidden');
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            projectModal.classList.add('hidden');
+        });
+
+        projectModal.addEventListener('click', (e) => {
+            if (e.target === projectModal) {
+                projectModal.classList.add('hidden');
+            }
+        });
+    </script>
 </body>
 </html>
