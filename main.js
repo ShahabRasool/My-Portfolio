@@ -19,7 +19,7 @@
             .typeString('Web developer')
             .pauseFor(2000)
             .deleteAll()
-            .typeString('Drupal Developer')
+            .typeString('Html, CSS, Tailwind CSS, JavaScript')
             .pauseFor(2000)
             .start();
 
