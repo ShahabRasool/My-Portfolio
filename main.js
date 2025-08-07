@@ -16,7 +16,7 @@
             .typeString('Frontend Developer')
             .pauseFor(2000)
             .deleteAll()
-            .typeString('Web developer')
+            .typeString('Responsive Design')
             .pauseFor(2000)
             .deleteAll()
             .typeString('Html, CSS, Tailwind CSS, JavaScript')
